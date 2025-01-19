@@ -1,124 +1,192 @@
-﻿/* Global Styles */
-body {
-    font-family: Arial, sans-serif;
+﻿/* Główne style */
+html, body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    background-color: #f4f4f9;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7fb; /* Jasne tło */
+    color: #333; /* Ciemny tekst */
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+/* Kontener główny */
 .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
-/* Header */
+/* Nagłówek */
 header {
-    background-color: #004d99;
+    background-color: #00796b; /* Zielony odcień */
     color: white;
     padding: 20px;
     text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.header-content h1 {
-    margin: 0;
-}
+    header h1 {
+        font-size: 2rem;
+        letter-spacing: 1px;
+        margin: 0;
+    }
 
-/* Main Content */
+/* Główna zawartość */
 main {
     padding: 20px;
+    flex-grow: 1;
 }
 
-.student-list, .add-student {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    padding: 20px;
-}
-
-h2 {
-    font-size: 1.5em;
-    color: #333;
-}
-
-.student-grid {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-    .student-grid th, .student-grid td {
-        padding: 10px;
-        text-align: left;
-    }
-
-    .student-grid th {
-        background-color: #004d99;
-        color: white;
-    }
-
-    .student-grid td {
-        background-color: #f9f9f9;
-    }
-
-/* Form Styles */
+/* Formularz dodawania studenta */
 .student-form table {
     width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Delikatny cień */
 }
 
 .student-form td {
-    padding: 10px;
+    padding: 12px;
+    text-align: left;
+    font-size: 1rem;
 }
 
 .input-field {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin: 5px 0;
-    border: 1px solid #ddd;
     border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background-color: #fff;
+    transition: border 0.3s ease;
 }
+
+    .input-field:focus {
+        border-color: #00796b; /* Kolor fokusu na polu */
+        outline: none;
+    }
 
 .btn {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
+    padding: 12px 20px;
+    margin: 10px 5px;
     cursor: pointer;
-    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-    .btn.primary {
-        background-color: #4CAF50;
-        color: white;
+.primary {
+    background-color: #00796b; /* Zielony przycisk */
+    color: white;
+}
+
+    .primary:hover {
+        background-color: #004d40;
+        transform: scale(1.05);
     }
 
-    .btn.secondary {
-        background-color: #008CBA;
-        color: white;
+.secondary {
+    background-color: #f44336; /* Czerwony przycisk */
+    color: white;
+}
+
+    .secondary:hover {
+        background-color: #d32f2f;
+        transform: scale(1.05);
     }
 
-    .btn.clear {
-        background-color: #f44336;
-        color: white;
+.clear {
+    background-color: #e7e7e7; /* Szary przycisk */
+    color: black;
+}
+
+    .clear:hover {
+        background-color: #c2c2c2;
+        transform: scale(1.05);
     }
 
-    .btn.edit {
-        background-color: #ff9800;
-        color: white;
+.edit, .delete {
+    background-color: #4CAF50; /* Zielony przycisk */
+    color: white;
+}
+
+    .edit:hover, .delete:hover {
+        background-color: #388e3c;
+        transform: scale(1.05);
     }
 
-    .btn.delete {
-        background-color: #e91e63;
-        color: white;
+/* GridView */
+.student-grid {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+    .student-grid th, .student-grid td {
+        padding: 12px;
+        text-align: left;
+        border: 1px solid #ddd;
     }
 
-/* Footer */
+    .student-grid th {
+        background-color: #f4f7fb;
+        font-weight: bold;
+        color: #00796b;
+    }
+
+    .student-grid td {
+        background-color: #fff;
+    }
+
+    .student-grid tr:nth-child(even) td {
+        background-color: #f9f9f9; /* Naprzemienny kolor wierszy */
+    }
+
+    .student-grid tr:hover td {
+        background-color: #e1f5fe;
+    }
+
+/* Stopka */
 footer {
-    background-color: #333;
+    background-color: #00796b; /* Zielona stopka */
     color: white;
     text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
+    padding: 20px;
     width: 100%;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+    footer p {
+        font-size: 1rem;
+        margin: 0;
+    }
+
+/* Responsywność */
+@media (max-width: 768px) {
+    .student-form table {
+        width: 100%;
+    }
+
+    .input-field {
+        padding: 10px;
+    }
+
+    .btn {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+
+    footer {
+        font-size: 0.9rem;
+        padding: 15px;
+    }
 }

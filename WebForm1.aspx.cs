@@ -30,6 +30,8 @@ namespace WebApplication1
                 Class = TextBoxClass.Text
             };
             student.Insert();
+            // Po dodaniu, przekierowanie na tę samą stronę, aby uniknąć wielokrotnego dodawania
+            Response.Redirect(Request.Url.AbsoluteUri);
 
             TextBoxFirstName.Text = "";
             TextBoxLastName.Text = "";
